@@ -1,0 +1,16 @@
+{
+  "source": "website",
+  "source_submission_id": "FORMINATOR-TEST-001",
+  "client_name": "Fake Client Alpha",
+  "email": "fake.alpha@example.com",
+  "phone": "+15555550101",
+  "whatsapp_number": "+15555550101",
+  "preferred_contact_method": "Email",
+  "service_category": "Statistical Analysis",
+  "service_description": "Fake test request for descriptive statistics and visualization.",
+  "deadline": "2026-08-15T17:00:00-04:00",
+  "deadline_type": "Flexible",
+  "lead_source": "Website",
+  "consent_for_follow_up": true
+}
+

@@ -1,0 +1,43 @@
+{
+  "twentyStages": [
+    "New Inquiry",
+    "Qualified",
+    "Proposal Sent",
+    "Awaiting Deposit",
+    "Active",
+    "Waiting on Client",
+    "Internal Review",
+    "Ready for Delivery",
+    "Delivered",
+    "Follow-up / Revisions",
+    "Closed Won",
+    "Closed Lost"
+  ],
+  "trelloToTwentyAllowedUpdates": {
+    "Waiting on Client": {
+      "field": "Internal Delivery Status",
+      "value": "Waiting on client"
+    },
+    "Internal Review": {
+      "field": "Internal Delivery Status",
+      "value": "Internal review"
+    },
+    "Ready for Delivery": {
+      "field": "Pipeline Stage",
+      "value": "Ready for Delivery"
+    },
+    "Delivered": {
+      "field": "Pipeline Stage",
+      "value": "Delivered"
+    }
+  },
+  "forbiddenTrelloUpdates": [
+    "Quote Amount",
+    "Payment Status",
+    "Client Deadline",
+    "Contact fields",
+    "Closed Won",
+    "Closed Lost"
+  ]
+}
+

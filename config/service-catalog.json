@@ -1,0 +1,47 @@
+{
+  "currencyDefault": "USD",
+  "serviceCategories": [
+    "Statistical Analysis",
+    "Data Cleaning",
+    "Research Consulting",
+    "Survey Design",
+    "Data Visualization",
+    "Manuscript Support",
+    "Grant or Proposal Support",
+    "Other"
+  ],
+  "deadlineTypes": [
+    "Flexible",
+    "Hard",
+    "External submission"
+  ],
+  "leadSources": [
+    "Website",
+    "WhatsApp",
+    "Referral",
+    "Returning client",
+    "Other"
+  ],
+  "paymentStatuses": [
+    "Not invoiced",
+    "Deposit due",
+    "Partial",
+    "Paid",
+    "Overdue",
+    "Refunded"
+  ],
+  "riskFlags": [
+    "Normal",
+    "Deadline risk",
+    "Payment risk",
+    "Scope risk"
+  ],
+  "internalDeliveryStatuses": [
+    "Not started",
+    "Active",
+    "Waiting on client",
+    "Internal review",
+    "Delivered"
+  ]
+}
+

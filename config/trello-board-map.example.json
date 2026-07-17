@@ -1,0 +1,17 @@
+{
+  "boardName": "ProData Client Delivery",
+  "boardId": "<TRELLO_BOARD_ID>",
+  "lists": {
+    "newIntake": "<LIST_ID>",
+    "qualifiedScoping": "<LIST_ID>",
+    "proposalSent": "<LIST_ID>",
+    "awaitingDeposit": "<LIST_ID>",
+    "activeWork": "<LIST_ID>",
+    "waitingOnClient": "<LIST_ID>",
+    "internalReview": "<LIST_ID>",
+    "readyForDelivery": "<LIST_ID>",
+    "delivered": "<LIST_ID>",
+    "closedArchived": "<LIST_ID>"
+  }
+}
+

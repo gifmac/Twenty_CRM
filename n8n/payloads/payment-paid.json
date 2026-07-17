@@ -1,0 +1,13 @@
+{
+  "payment_reference": "TEST-PAYMENT-001",
+  "engagement_code": "PDA-2026-TEST1",
+  "payment_date": "2026-07-01T12:00:00-04:00",
+  "amount": 100,
+  "currency": "USD",
+  "status": "Paid",
+  "payment_method": "Other",
+  "processor_transaction_id": "TEST-TXN-001",
+  "invoice_or_receipt_link": "https://example.com/test-receipt",
+  "notes": "Fake payment payload for local CRM testing only."
+}
+
