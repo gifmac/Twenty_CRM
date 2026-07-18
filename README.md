@@ -2,16 +2,19 @@
 
 This repository contains the local proof-of-concept scaffold for ProData Analytics CRM.
 
-Twenty is the CRM system of record. Trello is only the internal delivery board. n8n is the synchronization layer. Cloudflare Tunnel and Cloudflare Access will protect temporary remote access in a later phase.
+Twenty is the CRM system of record. Trello is only the internal delivery board. n8n is the synchronization layer. Cloudflare Tunnel and Cloudflare Access protect the temporary CRM test hostname.
 
 ## Current Scope
 
-Phase 0 and Phase 1 only:
+Active proof-of-concept scope:
 
 - Repository scaffold and documentation.
 - Local Twenty Docker Compose configuration.
 - Local start, stop, status, and health-check scripts.
-- No Cloudflare, production n8n, Trello, WordPress, payment processor, or real-data changes.
+- Cloudflare Access protected CRM test hostname.
+- n8n credential and smoke-test documentation.
+- Twenty data-model preparation with fake records only.
+- No production n8n, Trello, WordPress, payment processor, or real-client-data changes.
 
 ## Version
 
@@ -51,11 +54,13 @@ docker compose --env-file .env -f .\compose\docker-compose.yml -f .\compose\dock
 .\scripts\start.ps1
 ```
 
-5. Open the local app:
+5. Browser access:
 
 ```text
-http://localhost:3000
+https://crm-test.proeduconnect.com
 ```
+
+`http://localhost:3000` is still used for local health/origin checks. Once `SERVER_URL` is set to the Cloudflare hostname, use the Cloudflare URL for interactive browser sessions.
 
 Use fake accounts and fake client records only.
 

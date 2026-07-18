@@ -56,7 +56,8 @@ docker compose --env-file .env -f .\compose\docker-compose.yml -f .\compose\dock
 - [ ] `docker compose config` succeeds.
 - [ ] `docker compose up -d` starts `server`, `worker`, `db`, and `redis`.
 - [ ] `docker compose ps` shows expected services running or healthy.
-- [ ] `http://localhost:3000` responds.
+- [ ] `http://localhost:3000` responds for health/origin checks.
+- [ ] Browser sessions use the same hostname configured in `SERVER_URL`.
 - [ ] Recent logs show no recurring database or worker failures.
 - [ ] Twenty onboarding is completed with a fake administrator account.
 - [ ] Data persists after `.\scripts\stop.ps1` and `.\scripts\start.ps1`.
@@ -88,6 +89,14 @@ Local URL result:
 ```text
 http://localhost:3000 -> HTTP 200
 ```
+
+Current browser URL after Cloudflare Access setup:
+
+```text
+https://crm-test.proeduconnect.com
+```
+
+`SERVER_URL` is set to the Cloudflare hostname in the local `.env` so the Twenty frontend publishes `crm-test.proeduconnect.com` instead of `localhost`.
 
 Observed warnings:
 

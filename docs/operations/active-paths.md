@@ -14,7 +14,8 @@ C:\Users\gifma\projects\Twenty CRM
 | Compose file | `compose/docker-compose.yml` |
 | Local override | `compose/docker-compose.override.local.yml` |
 | Local env file | `.env` |
-| Local URL | `http://localhost:3000` |
+| Local health/origin URL | `http://localhost:3000` |
+| Browser URL | `https://crm-test.proeduconnect.com` |
 | Database volume | `prodata_twenty_test_db-data` |
 | Server storage volume | `prodata_twenty_test_server-local-data` |
 | Local cloudflared executable | `C:\Program Files (x86)\cloudflared\cloudflared.exe` |
@@ -43,6 +44,7 @@ docker compose --env-file .env -f .\compose\docker-compose.yml -f .\compose\dock
 | Cloudflare Tunnel for CRM | Reuse `prodata-tunnel` if same-account/domain boundary is confirmed; otherwise create `prodata-crm-test` |
 | Hostname `crm-test.proeduconnect.com` | Resolves; unauthenticated access returns `HTTP 302` |
 | Cloudflare Access app | Browser block active; service-token request returns `HTTP 200` |
+| Twenty `SERVER_URL` | `https://crm-test.proeduconnect.com` |
 | n8n CRM bridge | Future phase |
 | n8n Cloudflare Access credential | `Cloudflare Access - crm-test` |
 | n8n smoke test workflow | `ProData CRM - 00 Access Smoke Test`, returns `HTTP 200` |

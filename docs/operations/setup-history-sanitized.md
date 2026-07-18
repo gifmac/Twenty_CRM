@@ -39,3 +39,34 @@
 - Added Phase 3 Twenty data model runbook, service catalog, pipeline-stage map, and fake n8n payload fixtures.
 
 No real secrets, real client data, Cloudflare changes, n8n changes, Trello changes, WordPress changes, or payment-system changes were made.
+
+## July 17, 2026
+
+- Ran live Docker status and health checks.
+- Confirmed `db`, `redis`, `server`, and `worker` containers are running; `db`, `redis`, and `server` are healthy.
+- Confirmed `http://localhost:3000` returns `HTTP 200`.
+- Confirmed recent container logs had no warning/error patterns in the last 120 lines.
+- Confirmed `crm-test.proeduconnect.com` resolves through Cloudflare and unauthenticated browser access returns `HTTP 302`.
+- Ran a headless browser inspection with Playwright:
+  - local Twenty loaded at `http://localhost:3000/welcome`;
+  - page title was `Sign in or Create an account`;
+  - app navigation and workspace data rendered;
+  - no browser console errors, page errors, failed requests, or HTTP 4xx/5xx browser responses were observed.
+- Captured browser screenshots under ignored `tmp/browser-check/`.
+
+
+## July 18, 2026
+
+- Investigated owner-reported unstable clicks after login.
+- Confirmed the running app was still configured with `SERVER_URL=http://localhost:3000` while browser access used `https://crm-test.proeduconnect.com`.
+- Reproduced that Twenty advertised `localhost` in `/client-config` and workspace metadata before the fix.
+- Backed up the local `.env` to `.env.backup.20260718-035823`.
+- Updated local `.env` so `SERVER_URL=https://crm-test.proeduconnect.com`.
+- Recreated only the Twenty `server` and `worker` containers; database and Redis volumes were not recreated.
+- Verified:
+  - `docker compose config --quiet` passed;
+  - `db`, `redis`, and `server` are healthy;
+  - `http://localhost:3000` still returns `HTTP 200` for origin health;
+  - `/client-config` now returns `frontDomain: "crm-test.proeduconnect.com"`;
+  - workspace metadata now returns `https://crm-test.proeduconnect.com/`;
+  - unauthenticated browser access to `https://crm-test.proeduconnect.com` still lands on Cloudflare Access.
